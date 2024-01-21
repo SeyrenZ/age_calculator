@@ -103,10 +103,10 @@ const Calculator = () => {
   return (
     <form
       onSubmit={calculateAge}
-      className="w-auto h-auto p-12 pr-8 bg-white rounded-3xl rounded-br-[180px]"
+      className="w-auto h-auto sm:w-[375px] p-12 sm:p-5 pr-8 sm:pr-0 bg-white rounded-3xl rounded-br-[180px] sm:rounded-br-[100px] sm:flex sm:flex-col sm:items-center "
     >
       {/* input box */}
-      <div className="flex gap-x-7">
+      <div className="flex gap-x-7 sm:gap-x-5">
         <div className="flex flex-col gap-y-2 ">
           <label id="dayLabel" className="text-lg font-bold text-[#716f6f]">
             DAY
@@ -117,7 +117,7 @@ const Calculator = () => {
             id="dayInput"
             type="number"
             placeholder="DD"
-            className="w-36 p-4 text-3xl placeholder-[#6f6d6d] opacity-95 font-extrabold border-2 rounded-lg"
+            className="w-36 sm:w-24 p-4 text-3xl sm:text-2xl placeholder-[#6f6d6d] opacity-95 font-extrabold border-2 rounded-lg"
           />
           {erroMessage && (
             <div className="text-red-500 text-[13px] italic">{erroMessage}</div>
@@ -133,7 +133,7 @@ const Calculator = () => {
             id="monthInput"
             type="number"
             placeholder="MM"
-            className="w-36 p-4 text-3xl placeholder-[#6f6d6d] opacity-95 font-extrabold border-2 rounded-lg"
+            className="w-36 sm:w-24 p-4 text-3xl sm:text-2xl placeholder-[#6f6d6d] opacity-95 font-extrabold border-2 rounded-lg"
           />
           {erroMessage && (
             <div className="text-red-500 text-[13px] italic">{erroMessage}</div>
@@ -149,7 +149,7 @@ const Calculator = () => {
             id="yearInput"
             type="number"
             placeholder="YYYY"
-            className="w-36 p-4 text-3xl placeholder-[#6f6d6d] opacity-95 font-extrabold border-2 rounded-lg"
+            className="w-36 sm:w-24 p-4 text-3xl sm:text-2xl placeholder-[#6f6d6d] opacity-95 font-extrabold border-2 rounded-lg"
           />
           {erroMessage && (
             <div className="text-red-500 text-[13px] italic">{erroMessage}</div>
@@ -158,25 +158,26 @@ const Calculator = () => {
       </div>
       {/* button */}
       <div className="w-[650px] mt-2 flex items-center">
-        <hr className="w-[85%]" />
+        <hr className="w-[85%] sm:w-[43%]" />
         <button
           type="submit"
-          className="w-20 h-20 bg-[#854cff] hover:bg-[#141414] flex items-center justify-center rounded-full"
+          className="w-20 h-20 sm:w-16 sm:h-16 sm:my-5 bg-[#854cff] hover:bg-[#141414] flex items-center justify-center rounded-full"
         >
           <ArrowIcon />
         </button>
+        <hr className="w-[85%] sm:w-[43%] lg:hidden md:hidden" />
       </div>
       {/* Input result */}
       <div className="flex flex-col gap-y-2">
-        <div className="flex gap-x-2 text-8xl text[#141414] font-extrabold italic">
+        <div className="flex gap-x-2 text-8xl sm:text-5xl text[#141414] font-black italic">
           <span className="text-[#854cff]">{ageResult?.years}</span>
           years
         </div>
-        <div className="flex gap-x-2 text-8xl text[#141414] font-extrabold italic">
+        <div className="flex gap-x-2 text-8xl sm:text-5xl text[#141414] font-black italic">
           <span className="text-[#854cff]">{ageResult?.months}</span>
           months
         </div>
-        <div className="flex gap-x-2 text-8xl text[#141414] font-extrabold italic">
+        <div className="flex gap-x-2 text-8xl sm:text-5xl text[#141414] font-black italic">
           <span className="text-[#854cff]">{ageResult?.days}</span>
           days
         </div>
