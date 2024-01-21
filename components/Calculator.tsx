@@ -60,16 +60,6 @@ const Calculator = () => {
 
       const ageDiff = currentDate.getTime() - birthDate.getTime();
 
-      // calculate the years,month and days and rounded it with floor
-      const years = Math.floor(ageDiff / (365.25 * 24 * 60 * 60 * 1000));
-      const months = Math.floor(
-        (ageDiff % (365.25 * 24 * 60 * 60 * 1000)) /
-          (30.44 * 24 * 60 * 60 * 1000)
-      );
-      const days = Math.floor(
-        (ageDiff % (30.44 * 24 * 60 * 60 * 1000)) / (24 * 60 * 60 * 1000)
-      );
-
       if (isNaN(ageDiff) || birthDate > currentDate) {
         document.getElementById("dayInput")?.classList.add("border-red-500");
         document.getElementById("dayLabel")?.classList.add("text-red-500");
@@ -84,6 +74,15 @@ const Calculator = () => {
           days: "--",
         });
       } else {
+        // calculate the years,month and days and rounded it with floor
+        const years = Math.floor(ageDiff / (365.25 * 24 * 60 * 60 * 1000));
+        const months = Math.floor(
+          (ageDiff % (365.25 * 24 * 60 * 60 * 1000)) /
+            (30.44 * 24 * 60 * 60 * 1000)
+        );
+        const days = Math.floor(
+          (ageDiff % (30.44 * 24 * 60 * 60 * 1000)) / (24 * 60 * 60 * 1000)
+        );
         setAgeResult({ years, months, days });
         document.getElementById("dayInput")?.classList.remove("border-red-500");
         document.getElementById("dayLabel")?.classList.remove("text-red-500");
